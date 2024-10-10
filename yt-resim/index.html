@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📷 YouTube Görseli İndir</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="main fw-light">
+        <header>
+            <h4 class="display-6 lh-1 text-white">📷 YouTube Görseli İndir</h4>
+        </header>
+        <hr>
+        <label for="url" class="form-label small text-white">YouTube video URL'si girin (tüm formatlar desteklenir)</label>
+        <input name="url" type="search" id="url" class="form-control fw-light"
+            onfocus="if(this.value == 'https://www.youtube.com/watch?v=k8mOAV0KJLE') { this.value = ''; }"
+            onblur="if(this.value == '') { this.value = 'https://www.youtube.com/watch?v=k8mOAV0KJLE'; }"
+            value="https://www.youtube.com/watch?v=k8mOAV0KJLE" />
+        <div class="buttons">
+            <button class="btn btn-primary fw-light" onclick="dynamicUrl(0)">👁 Görüntüle 📷</button>
+            <button class="btn btn-info fw-light" onclick="dynamicUrl(1)">👀 Yüksek Kalite 📷</button>
+            <button class="btn btn-secondary fw-light" onclick="dynamicUrl(2)">👁 WebP Görüntüle 📷</button>
+            <button class="btn btn-success fw-light" onclick="download()">⏬ İndir</button>
+        </div>
+
+        <img decoding="async" class="center-fit" id="img" onclick="fullPage()" title="Büyütmek için tıklayın"
+            src="https://img.youtube.com/vi/k8mOAV0KJLE/maxresdefault.jpg" />
+        <footer>
+            <p class="text-white">Bu site telif haklarına saygılıdır. Görseller yalnızca referans amaçlıdır.</p>
+        </footer>
+    </div>
+    <div id="fullpage" title="Büyütmek için tıklayın" onclick="this.style.display='none';"></div> 
+    <script src="script.js" defer></script>
+</body>
+
+</html>
